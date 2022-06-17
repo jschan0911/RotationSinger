@@ -34,16 +34,20 @@
             
             targetday = dt.date(2022,6,12) 
             today = dt.datetime.now().date()
+
+            print('오늘은 ' + str(today) + ' 입니다.')
           
             day = (today - targetday).days
             if (day % 7 != 0):
                 day += 7
+                print('오늘은 주일이 아니므로 다음주 명단을 알려드리겠습니다.')
+            else:
+                print('오늘은 주일입니다! 화이팅!!')
             
             rotation = int((day/7)%len(rotationlist))
             
             singers = rotationlist[rotation] + ', ' + fixedlist
-            print('오늘은 ' + str(today) + ' 입니다.')
-            print('이번주 대예배 싱어는 ' + singers + '입니다.')
+            print('대예배 싱어는 ' + singers + '입니다.')
         </py-script>
     </div>
 </body>
