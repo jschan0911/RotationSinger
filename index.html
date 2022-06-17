@@ -2,15 +2,29 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>PyScript Hello World</title>
+    <title>Rotation Singer List</title>
 
     <!--    파이스크립트를 실행하기 위해 head 부분에 css와 js 파일을 로드-->
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
+    <style>
+        *{
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 50;
+            background-color: black;
+        }
+        .py{
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding-top: 30%;
+        }
+    </style>
+
 </head>
 <body>
-    <div>
+    <div class = 'py'>
 <!--        파이썬 코드임을 명시하는 py-script 태그 사용-->
         <py-script>
             import datetime as dt
@@ -28,6 +42,7 @@
             rotation = int((day/7)%len(rotationlist))
             
             singers = rotationlist[rotation] + ', ' + fixedlist
+            print('오늘은 ' + str(today) + ' 입니다.')
             print('이번주 대예배 싱어는 ' + singers + '입니다.')
         </py-script>
     </div>
