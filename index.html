@@ -17,15 +17,20 @@
         .py{
         color: black;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        padding-top: 40%;
+        padding-top: 20%;
+        }
+        .all{
+            display: flex;
+            justify-content: center;
         }
     </style>
 
 </head>
 <body>
+    <div class="all">
     <div class = 'py'>
-<!--        파이썬 코드임을 명시하는 py-script 태그 사용-->
         <py-script>
             import datetime as dt
 
@@ -41,13 +46,34 @@
             if (day % 7 != 0):
                 day += 7
             else:
-                print('오늘은 주일입니다! 화이팅!!')
+                print('오늘은 주일입니다!')
             
             rotation = int((day/7)%len(rotationlist))
             
             singers = rotationlist[rotation] + ', ' + fixedlist
             print('이번주 대예배 싱어는 ' + singers + '입니다.')
         </py-script>
+        <py-script>
+            import datetime as dt
+        
+            rotationlist = ['박소윤', '박세윤', '이다영']
+            fixedlist = '최영은, 이상원'
+                    
+            targetday = dt.date(2022,6,17) 
+            today = dt.datetime.now().date()
+                  
+            day = (today - targetday).days
+            if (day % 7 != 0):
+                day += 7
+            else:
+                print('오늘은 금요일입니다!')
+                    
+            rotation = int((day/7)%len(rotationlist))
+                    
+            singers = rotationlist[rotation] + ', ' + fixedlist
+            print('금요예배 싱어는 ' + singers + '입니다.')        
+        </py-script>
+    </div>
     </div>
 </body>
 </html>
