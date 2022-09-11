@@ -1,0 +1,21 @@
+@font-face{
+    src: url("../font/font.ttf");
+    font-family: "soi";
+}
+
+*{
+    font-family: "soi";
+    font-size: 120%;
+    background-color: white;
+}
+.py{
+color: black;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding-top: 20%;
+}
+.all{
+    display: flex;
+    justify-content: center;
+}
