@@ -15,8 +15,8 @@
         <py-script>
             import datetime as dt
 
-            rotationlist = ['박소윤, 이다영', '박세윤, 진승휘']
-            fixedlist = '정승찬'
+            femaleList = ['박소윤, 이다영', '박세윤, 진승휘']
+            maleList = ['정승찬', '박상화']
             
             targetday = dt.date(2022,6,12) 
             today = dt.datetime.now().date()
@@ -29,9 +29,10 @@
             else:
                 print('오늘은 주일입니다! ¶')
             
-            rotation = int((day/7)%len(rotationlist))
+            femaleIdx = int((day/7)%len(femaleList))
+            maleIdx = int((day/7)%len(maleList))
             
-            singers = rotationlist[rotation] + ', ' + fixedlist
+            singers = femaleList[femaleIdx] + ', ' + maleList[maleIdx]
             print('이번주 대예배 싱어는 ' + singers + '입니다.')
         </py-script>
         <py-script>
